@@ -3,7 +3,7 @@ import { emitWarning } from 'process';
 import React, { useEffect, useState } from 'react';
 import { setFlagsFromString } from 'v8';
 
-function Authorization() {
+function Registration() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [loginDirty, setLoginDirty] = useState(false);
@@ -26,47 +26,29 @@ function Authorization() {
   {
     const loginData = e.target.value;
     setLogin(e.target.value);
-    if(loginData.length > 0)
+    if(loginData.length < 3)
     {
-      setLoginError("");
+      setLoginError('Логин слишком маленький');
     }
     else
     {
-      setLoginError("Логин не может быть пустым");
+      setLoginError("");
     }
-    // if(loginData.length < 3)
-    // {
-    //   setLoginError('Логин слишком маленький');
-    // }
-    // else
-    // {
-    //   setLoginError("");
-    // }
 
   };
 
   const PasswordHundler = (e:  React.FocusEvent<HTMLInputElement>) =>
   {
     setPassword(e.target.value);
-    const passwordData = e.target.value; 
-    //const passwordDataError = passwordError;
-    if(passwordData.length > 0)
+    const lpasswordData = e.target.value;
+    if(lpasswordData.length < 6)
     {
-      setPasswordError("");
+      setPasswordError('Пароль должен быть больше 5 символов');
     }
     else
     {
-      setPasswordError("Пароль не может быть пустым");
+      setPasswordError("");
     }
-   // const lpasswordData = e.target.value;
-    // if(lpasswordData.length < 6)
-    // {
-    //   setPasswordError('Пароль должен быть больше 5 символов');
-    // }
-    // else
-    // {
-    //   setPasswordError("");
-    // }
 
   };
 
@@ -94,14 +76,14 @@ function Authorization() {
       <form className="w-100 h-100 bg-white rounded-lg p-6 shadow-md">
 
         <h1 className="text-center mb-4 font-semibold text-lg">
-          Авторизация
+          Регистрация
         </h1>
 
         <div className="w-full flex flex-col gap-4">
           
           {(loginDirty && loginError) && <div style={{color:'red'}}>{loginError}</div>}
           <input
-         onChange={loginHundler}
+          onChange={loginHundler}
             onBlur={e=> blurHandler(e)}
             value = {login}
             name = 'login'
@@ -129,4 +111,4 @@ function Authorization() {
 
 }
 
-export default Authorization;
+export default Registration;

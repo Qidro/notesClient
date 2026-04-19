@@ -4,6 +4,7 @@ import './output.css';
 import App from './App';
 import Authorization from './authorization';
 import Header from './Headers/Headers';
+import Registration from './registration';
 
 
 const root = ReactDOM.createRoot(
