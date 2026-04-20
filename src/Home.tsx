@@ -7,8 +7,9 @@ function App() {
       logo="/logo.png"
       navData={[
         { label: "Главная", href: "/" },
-        { label: "О нас", href: "/about" },
-        { label: "Контакты", href: "/contact" },
+        { label: "Группы", href: "/" },
+        { label: "Создание заметки", href: "/about" },
+        { label: "Контакты", href: "/contact" }
       ]}
     />
    

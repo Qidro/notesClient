@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './output.css';
-import App from './App';
+import App from './Home';
 import Authorization from './authorization';
 import Header from './Headers/Headers';
 import Registration from './registration';
+import Home from './Home';
+import Сontacts from './contacts';
 
 
 const root = ReactDOM.createRoot(
@@ -12,7 +14,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Authorization />
+    <Сontacts />
+     <Header
+      logo="/logo.png"
+      navData={[
+        { label: "Главная", href: "/" },
+        { label: "Группы", href: "/" },
+        { label: "Создание замеки", href: "/about" },
+        { label: "Контакты", href: "/contact" }
+      ]}
+    />
   </React.StrictMode>
 );
 
