@@ -7,23 +7,30 @@ import Header from './Headers/Headers';
 import Registration from './registration';
 import Home from './Home';
 import Сontacts from './contacts';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Сontacts />
-     <Header
-      logo="/logo.png"
-      navData={[
-        { label: "Главная", href: "/" },
-        { label: "Группы", href: "/" },
-        { label: "Создание замеки", href: "/about" },
-        { label: "Контакты", href: "/contact" }
-      ]}
-    />
+    <BrowserRouter>
+      {/* <Header
+        logo="/logo.png"
+        navData={[
+          { label: "Главная", href: "/" },
+          { label: "Группы", href: "/" },
+          { label: "Создание заметки", href: "/about" },
+          { label: "Контакты", href: "/contact" }
+        ]}
+      /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Authorization />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/contact" element={<Сontacts />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

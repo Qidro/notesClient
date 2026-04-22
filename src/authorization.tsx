@@ -2,6 +2,7 @@ import { log } from 'console';
 import { emitWarning } from 'process';
 import React, { useEffect, useState } from 'react';
 import { setFlagsFromString } from 'v8';
+import { authorization } from './Requests/requests';
 
 function Authorization() {
     const [login, setLogin] = useState('');
@@ -84,7 +85,9 @@ function Authorization() {
     }
   }
 
-
+  const handleClick = async() => {
+   authorization();
+  };
     return (
 
   
@@ -122,7 +125,12 @@ function Authorization() {
 
         </div>
 
-        <button disabled = {!formValid} className={formValid ? 'mt-6 bg-blue-500 text-white w-full py-2 px-4 rounded-lg hover ': 'mt-6 bg-gray-500 text-white w-full py-2 px-4 rounded-lg hover' }>Авторизоваться</button>
+        <button 
+        type="button"
+        disabled = {!formValid} 
+        className={formValid ? 'mt-6 bg-blue-500 text-white w-full py-2 px-4 rounded-lg hover ': 'mt-6 bg-gray-500 text-white w-full py-2 px-4 rounded-lg hover' }
+        onClick={handleClick}
+        >Авторизоваться</button>
       </form>
   </div>
     );
