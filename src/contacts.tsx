@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import Header from "./Headers/Headers";
 
 const Сontacts = () => {
 
   return (
+    
     <div className="grid grid-cols-7 gap-10">
-      
+      <Header
+      logo="/logo.png"
+      navData={[
+        { label: "Главная", href: "/" },
+        { label: "Группы", href: "/" },
+        { label: "Создание заметки", href: "/about" },
+        { label: "Контакты", href: "/contact" }
+      ]}
+    />
       <h1 className="col-start-2 row-start-3 font-semibold text-4xl whitespace-nowrap">Контактная информация</h1>
       
       <div className="col-start-2 h-55 w-100 row-start-5 border border-gray-300 rounded-xl px-5 py-2 shadow-md bg-white">

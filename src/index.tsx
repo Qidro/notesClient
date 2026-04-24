@@ -8,6 +8,8 @@ import Registration from './registration';
 import Home from './Home';
 import Сontacts from './contacts';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ConfirmEmail from './confirmEmail';
+import VerifyEmail from './confirmEmail';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -29,6 +31,7 @@ root.render(
         <Route path="/login" element={<Authorization />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/contact" element={<Сontacts />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
